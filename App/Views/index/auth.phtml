@@ -1,0 +1,45 @@
+<div class="container">
+  <div class="d-flex justify-content-center mt-5">
+    <div class="card" style="width: 36rem;">
+      <div class="card-body">
+
+        <div class="d-flex justify-content-center">
+          <img src="/img/twitter_logo.png" />
+        </div>
+
+        <div class="row">
+          <div class="col">
+            <h2>Digite aqui seu token de verificação</h2>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col">
+            <form action="/valida_token" method="post">
+
+                <div class="form-group">
+                  <input class="form-control" placeholder="seu token aqui" type="text" name="tokenEnviado">
+                </div>
+                
+                <button type="submit" class="btn btn-primary btn-block" >enviar</button>
+
+                <div class="mt-4 mb-4">
+                <small class="form-text">
+                  Por favor verifire em sua caixa de e-mail o token de verificação, e insira o seu código para autenticar sua conta.
+                </small>
+              </div>
+              
+            </form>
+            <?php if(isset($_GET['tentativa']) == 'erro') { ?>
+
+                <small class="form-text text-danger">*Token incorreto, por favor verifique novamente o seu e-mail.</small>
+
+            <?php } ?>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>
+
